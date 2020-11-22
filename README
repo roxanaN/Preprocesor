@@ -1,0 +1,32 @@
+Nemulescu Roxana-Elena 332CA
+
+Tema 1 - Preprocesor
+
+    Pentru a implementa hashtable-ului am folosit structurile cu listele.
+    Pentru a realiza functionalitatea de preprocesor am parsat mai intai
+    argumentele din linia de comanada, pentru a obtine atat fisierele de
+    input / output, cat si variabilele definite in linia de comanda si
+    directoarele pentru directiva #include.
+
+    La parsarea fisierului de input, liniile cu #define au fost exploatate
+    cu ajutorul functiei strtok, pentru a extrage variabilele definite,
+    care, mai apoi, au fost adaugate in hash. Pentru define-urile
+    definite pe mai multe linii, am ales sa concatenez toate liniile
+    aferente define-ului, inlocuind tab-urile, newline-urile si \ - urile
+    cu spatii, folosind functia replace, apelata si pentru a inlocui
+    variabilele cu valoarea acestora.
+
+    Pentru directiva #include am parsat fisierul header dupa aceleasi reguli
+    folosite pentru parsarea fisierului initial.
+
+    Pentru a inlocui variabilele, am apelat functia replace pentru fiecare
+    element din hash, doar in cazul liniilor ce urmau a fi trimise catre
+    output.
+
+    Pentru a nu inlocui variabilele din textul afisat de catre printf,
+    am impartit argumentele acestei functii si am facut replace doar
+    pentru cea de-a doua parte.
+
+    Pentru situatiile in care programul iese cu eroare, am implementat
+    functia catastrophe, care dezaloca memoria inainte de inchiderea
+    programului.
